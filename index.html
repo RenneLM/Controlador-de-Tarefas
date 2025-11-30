@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controlador de Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Controlador de Tarefas</h1>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Criar Tarefa</h2>
+
+            <form id="taskForm">
+                <label for="titulo">Título da Tarefa</label>
+                <input type="text" id="titulo" name="titulo" required minlength="3" />
+
+                <label for="responsavel">Responsável</label>
+                <input type="text" id="responsavel" name="responsavel" required />
+
+                <label for="prazo">Prazo</label>
+                <input type="date" id="prazo" name="prazo" required />
+
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                    <option value="">Selecione...</option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Concluída">Concluída</option>
+                </select>
+
+                <button type="submit">Adicionar Tarefa</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Tarefa Cadastrada</h2>
+            <ul id="taskList"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projeto acadêmico - Rennê</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f2f4f7;
+    color: #333;
+    padding: 20px;
+}
+
+header, footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+input:focus, select:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    background: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1f6a92;
+}
+
+#taskList {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.task-item {
+    background: #e8eef3;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.remove-btn {
+    background: #c0392b;
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #922b21;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .card {
+        padding: 15px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
