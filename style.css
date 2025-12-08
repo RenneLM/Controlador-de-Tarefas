@@ -1,105 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+/* 01: Reset básico: remove margens e padding padrão, define box-sizing e fonte */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
 
-body {
-    background: #f2f4f7;
-    color: #333;
-    padding: 20px;
-}
+/* 02: Estilo do body: fundo em degradê claro e padding geral */
+body { background: linear-gradient(135deg, #e9f0fb, #f7fbff); padding: 20px; color: #223; }
 
-header, footer {
-    text-align: center;
-    margin-bottom: 20px;
-}
+/* 03: Cabeçalho: centraliza conteúdo */
+header { text-align: center; margin-bottom: 18px; }
 
-h1 {
-    color: #2c3e50;
-}
+/* 04: Título principal (h1) */
+h1 { color: #1b4f72; font-size: 28px; }
 
+/* 05: Cartões (cards) usados para agrupar formulário e lista */
 .card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+  background: #ffffff;                 /* 05.1: Fundo branco para destacar do body */
+  padding: 24px;                       /* 05.2: Espaçamento interno */
+  border-radius: 12px;                 /* 05.3: Cantos arredondados */
+  box-shadow: 0 6px 18px rgba(30,40,50,0.08); /* 05.4: Sombra suave para profundidade */
+  margin: 12px auto;                   /* 05.5: Espaçamento externo e centralização */
+  max-width: 720px;                    /* 05.6: Largura máxima para leitura confortável */
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+/* 06: Card específico para login com margem maior */
+.login-card { margin-top: 80px; text-align: center; }
 
+/* 07: Texto informativo do login */
+.info-login { margin-top: 10px; color: #556; font-size: 14px; }
+
+/* 08: Estilização de formulários: organização em coluna com gaps */
+form { display: flex; flex-direction: column; gap: 12px; }
+
+/* 09: Inputs e selects: padding, borda, radius e transição */
 input, select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  padding: 12px; border: 1px solid #ccd; border-radius: 10px; transition: border-color 0.18s ease;
+  background: #fff; color: #112; font-size: 15px;
 }
 
-input:focus, select:focus {
-    border-color: #2980b9;
-    outline: none;
-}
+/* 10: Foco em inputs e selects para acessibilidade visual */
+input:focus, select:focus { outline: none; border-color: #2b7bd1; box-shadow: 0 0 0 3px rgba(43,123,209,0.08); }
 
+/* 11: Botões padrão */
 button {
-    padding: 12px;
-    background: #2980b9;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: 0.2s;
+  padding: 12px 14px; border-radius: 10px; border: none; cursor: pointer;
+  background: linear-gradient(180deg,#2b7bd1,#1f5ea4); color: white; font-weight: 600; font-size: 16px;
 }
 
-button:hover {
-    background: #1f6a92;
-}
+/* 12: Hover nos botões */
+button:hover { filter: brightness(0.95); transform: translateY(-1px); }
 
-#taskList {
-    list-style: none;
-    margin-top: 10px;
-}
+/* 13: Lista de tarefas sem marcador */
+#taskList { list-style: none; margin-top: 10px; }
 
+/* 14: Item da lista (cada tarefa) */
 .task-item {
-    background: #e8eef3;
-    padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex; justify-content: space-between; align-items: center;
+  background: #f4f8ff; padding: 14px; border-radius: 10px; margin-bottom: 10px;
+  border: 1px solid #e2eaf8;
 }
 
-.task-info {
-    display: flex;
-    flex-direction: column;
-}
+/* 15: Container das informações textuais da tarefa */
+.task-info { display: flex; flex-direction: column; gap: 4px; }
 
+/* 16: Texto secundário em itens */
+.task-info span { font-size: 14px; color: #334; }
+
+/* 17: Botão de remover estilizado */
 .remove-btn {
-    background: #c0392b;
-    padding: 6px 10px;
-    border-radius: 6px;
-    color: white;
-    border: none;
-    cursor: pointer;
+  background: #d6453b; color: #fff; border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer;
 }
 
-.remove-btn:hover {
-    background: #922b21;
-}
+/* 18: Hover no botão de remover */
+.remove-btn:hover { background: #b7372a; }
 
-/* Responsividade */
+/* 19: Ajustes para telas pequenas (responsividade) */
 @media (max-width: 600px) {
-    .card {
-        padding: 15px;
-    }
-
-    button {
-        font-size: 14px;
-    }
+  /* 19.1: Cards com margem reduzida e padding menor */
+  .card { margin: 12px; padding: 16px; }
+  /* 19.2: Texto menor nos títulos para caber melhor na tela */
+  h1 { font-size: 22px; }
+  /* 19.3: Ajuste no layout dos itens da lista: coluna quando necessário */
+  .task-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+  /* 19.4: Botões com tamanho ajustado */
+  button { font-size: 15px; width: 100%; }
 }
