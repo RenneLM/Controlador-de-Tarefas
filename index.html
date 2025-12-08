@@ -1,53 +1,82 @@
 <!DOCTYPE html>
+<!-- 01: Declara o documento como HTML5 -->
 <html lang="pt-BR">
+<!-- 02: Elemento raiz com idioma definido -->
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 03: Head com metadados -->
+    <meta charset="UTF-8">
+    <!-- 04: Codificação UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 05: Responsividade (mobile) -->
     <title>Controlador de Tarefas</title>
-    <link rel="stylesheet" href="style.css" />
+    <!-- 06: Título da página principal -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 07: Importa o mesmo CSS usado no login -->
 </head>
-
 <body>
+<!-- 08: Corpo da página principal -->
     <header>
+    <!-- 09: Cabeçalho com título -->
         <h1>Controlador de Tarefas</h1>
     </header>
 
     <main>
+    <!-- 10: Conteúdo principal -->
         <section class="card">
+        <!-- 11: Card do formulário de criação de tarefa -->
             <h2>Criar Tarefa</h2>
 
-            <form id="taskForm">
+            <form id="taskForm" aria-label="Formulário de criação de tarefas">
+            <!-- 12: Formulário para criar tarefas -->
                 <label for="titulo">Título da Tarefa</label>
-                <input type="text" id="titulo" name="titulo" required minlength="3" />
+                <!-- 13: Label do campo título -->
+                <input type="text" id="titulo" name="titulo" required minlength="3">
+                <!-- 14: Input de texto obrigatório com minlength -->
 
                 <label for="responsavel">Responsável</label>
-                <input type="text" id="responsavel" name="responsavel" required />
+                <!-- 15: Label do campo responsável -->
+                <input type="text" id="responsavel" name="responsavel" required>
+                <!-- 16: Input de texto obrigatório -->
 
                 <label for="prazo">Prazo</label>
-                <input type="date" id="prazo" name="prazo" required />
+                <!-- 17: Label do campo prazo -->
+                <input type="date" id="prazo" name="prazo" required>
+                <!-- 18: Input do tipo date obrigatório -->
 
                 <label for="status">Status</label>
+                <!-- 19: Label do campo status -->
                 <select id="status" name="status" required>
+                <!-- 20: Select obrigatório para escolher status -->
                     <option value="">Selecione...</option>
+                    <!-- 21: Opção vazia para forçar escolha -->
                     <option value="Pendente">Pendente</option>
+                    <!-- 22: Opção pendente -->
                     <option value="Em andamento">Em andamento</option>
+                    <!-- 23: Opção em andamento -->
                     <option value="Concluída">Concluída</option>
+                    <!-- 24: Opção concluída -->
                 </select>
 
                 <button type="submit">Adicionar Tarefa</button>
+                <!-- 25: Botão que envia o formulário -->
             </form>
         </section>
 
         <section class="card">
-            <h2>Tarefa Cadastrada</h2>
+        <!-- 26: Card que mostra a lista de tarefas -->
+            <h2>Tarefas Cadastradas</h2>
+            <!-- 27: Título da seção -->
             <ul id="taskList"></ul>
+            <!-- 28: Lista onde as tarefas serão inseridas dinamicamente -->
         </section>
     </main>
 
     <footer>
+    <!-- 29: Rodapé com créditos -->
         <p>Projeto acadêmico - Rennê</p>
     </footer>
 
     <script src="script.js"></script>
+    <!-- 30: Importa o mesmo script.js; nele há lógica para a página de tarefas -->
 </body>
 </html>
