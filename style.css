@@ -16,8 +16,8 @@ body { /* Configurações gerais */
 }
 
 .card {
-    width: 90%; /* 📱 ALTERAÇÃO: agora ocupa 90% da tela no celular */
-    max-width: 600px; /* 📌 Mantém o tamanho original no PC */
+    width: 90%; /* Ocupa 90% da tela no celular */
+    max-width: 600px; /*  Mantém o tamanho original no PC */
     background: #12181f; /* Fundo interno */
     padding: 30px; /* Espaçamento interno */
     border-radius: 12px; /* Bordas arredondadas */
@@ -84,13 +84,21 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 1;
 }
 
+
+/* === Força o texto interno do input de data a ficar branco === */
+input[type="date"] {
+    color-scheme: dark; /*  Faz o navegador usar tema escuro no controle */
+    color: white;       /*  Texto da data branco */
+}
+
+
 /* Esconde o sistema até o login */
 #sistema {
     display: none; /* Oculto inicialmente */
 }
 
 /* ====================== 📱 RESPONSIVIDADE PARA CELULAR ====================== */
-@media screen and (max-width: 480px) { /* 📌 ATIVA somente em telas pequenas */
+@media screen and (max-width: 480px) { /*  Ativa somente em telas pequenas */
     
     .titulo { /* Ajusta tamanho do título no celular */
         font-size: 26px; /* Menor para encaixar melhor */
@@ -100,4 +108,23 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         font-size: 16px;
         padding: 12px;
     }
+}
+
+
+/* ====================== BOTÃO DE REMOVER ====================== */
+
+.remove-btn {
+    margin-top: 10px;          
+    padding: 10px;             
+    background: #8b0000;       
+    border: none;              
+    color: white;              
+    width: 100%;               
+    border-radius: 6px;        
+    cursor: pointer;           
+    font-size: 15px;           
+}
+
+.remove-btn:hover {
+    background: #5c0000;       
 }
