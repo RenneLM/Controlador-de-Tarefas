@@ -39,6 +39,7 @@ function adicionarTarefa() { // Função chamada ao clicar no botão
         <p><strong>Responsável:</strong> ${responsavel}</p>
         <p><strong>Prazo:</strong> ${prazo}</p>
         <p><strong>Status:</strong> ${status}</p>
+        <button class="remove-btn" onclick="this.parentElement.remove()">Remover</button> <!-- Botão remover -->
     `;
 
     lista.appendChild(bloco); // Adiciona ao HTML
