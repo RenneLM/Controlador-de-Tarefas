@@ -1,82 +1,77 @@
-<!DOCTYPE html>
-<!-- 01: Declara o documento como HTML5 -->
-<html lang="pt-BR">
-<!-- 02: Elemento raiz com idioma definido -->
-<head>
-    <!-- 03: Head com metadados -->
-    <meta charset="UTF-8">
-    <!-- 04: Codificação UTF-8 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 05: Responsividade (mobile) -->
-    <title>Controlador de Tarefas</title>
-    <!-- 06: Título da página principal -->
-    <link rel="stylesheet" href="style.css">
-    <!-- 07: Importa o mesmo CSS usado no login -->
-</head>
-<body>
-<!-- 08: Corpo da página principal -->
-    <header>
-    <!-- 09: Cabeçalho com título -->
-        <h1>Controlador de Tarefas</h1>
-    </header>
+<!DOCTYPE html> <!-- Declara que o documento é HTML5 -->
+<html lang="pt-br"> <!-- Define idioma da página -->
 
-    <main>
-    <!-- 10: Conteúdo principal -->
-        <section class="card">
-        <!-- 11: Card do formulário de criação de tarefa -->
+<head> <!-- Cabeçalho -->
+    <meta charset="UTF-8"> <!-- Padrão de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+    <title>Controlador de Tarefas</title> <!-- Título -->
+    <link rel="stylesheet" href="style.css"> <!-- Liga o CSS -->
+</head>
+
+<body> <!-- Corpo da página -->
+
+    <!-- ======================= TELA DE LOGIN ======================= -->
+
+    <div id="loginArea"> <!-- Div da tela de login -->
+        <h1 class="titulo">Login</h1> <!-- Título da página inicial -->
+
+        <div class="card"> <!-- Card do login -->
+
+            <label for="user">Usuário</label> <!-- Rótulo -->
+            <input type="text" id="user" placeholder="Digite seu usuário"> <!-- Campo usuário -->
+
+            <label for="senha">Senha</label> <!-- Rótulo -->
+            <input type="password" id="senha" placeholder="Digite sua senha"> <!-- Campo senha -->
+
+            <button onclick="fazerLogin()">Entrar</button> <!-- Botão login -->
+
+        </div>
+    </div>
+
+    <!-- ======================= SISTEMA DE TAREFAS ======================= -->
+
+    <div id="sistema"> <!-- Área oculta até o login -->
+
+        <h1 class="titulo">Controlador de Tarefas</h1> <!-- Título principal -->
+
+        <div class="card"> <!-- Card do formulário -->
+
             <h2>Criar Tarefa</h2>
 
-            <form id="taskForm" aria-label="Formulário de criação de tarefas">
-            <!-- 12: Formulário para criar tarefas -->
-                <label for="titulo">Título da Tarefa</label>
-                <!-- 13: Label do campo título -->
-                <input type="text" id="titulo" name="titulo" required minlength="3">
-                <!-- 14: Input de texto obrigatório com minlength -->
+            <label for="titulo">Título da Tarefa</label>
+            <input type="text" id="titulo" placeholder="Digite o título">
 
-                <label for="responsavel">Responsável</label>
-                <!-- 15: Label do campo responsável -->
-                <input type="text" id="responsavel" name="responsavel" required>
-                <!-- 16: Input de texto obrigatório -->
+            <label for="responsavel">Responsável</label>
+            <input type="text" id="responsavel" placeholder="Digite o responsável">
 
-                <label for="prazo">Prazo</label>
-                <!-- 17: Label do campo prazo -->
-                <input type="date" id="prazo" name="prazo" required>
-                <!-- 18: Input do tipo date obrigatório -->
+            <label for="prazo">Prazo</label>
+            <input type="date" id="prazo">
 
-                <label for="status">Status</label>
-                <!-- 19: Label do campo status -->
-                <select id="status" name="status" required>
-                <!-- 20: Select obrigatório para escolher status -->
-                    <option value="">Selecione...</option>
-                    <!-- 21: Opção vazia para forçar escolha -->
-                    <option value="Pendente">Pendente</option>
-                    <!-- 22: Opção pendente -->
-                    <option value="Em andamento">Em andamento</option>
-                    <!-- 23: Opção em andamento -->
-                    <option value="Concluída">Concluída</option>
-                    <!-- 24: Opção concluída -->
-                </select>
+            <label for="status">Status</label>
+            <select id="status">
+                <option value="">Selecione...</option>
+                <option value="Pendente">Pendente</option>
+                <option value="Em Andamento">Em Andamento</option>
+                <option value="Concluída">Concluída</option>
+            </select>
 
-                <button type="submit">Adicionar Tarefa</button>
-                <!-- 25: Botão que envia o formulário -->
-            </form>
-        </section>
+            <button onclick="adicionarTarefa()">Adicionar Tarefa</button>
 
-        <section class="card">
-        <!-- 26: Card que mostra a lista de tarefas -->
+        </div>
+
+        <div class="card"> <!-- Lista de tarefas -->
             <h2>Tarefas Cadastradas</h2>
-            <!-- 27: Título da seção -->
-            <ul id="taskList"></ul>
-            <!-- 28: Lista onde as tarefas serão inseridas dinamicamente -->
-        </section>
-    </main>
 
-    <footer>
-    <!-- 29: Rodapé com créditos -->
-        <p>Projeto acadêmico - Rennê</p>
-    </footer>
+            <div id="listaTarefas"></div> <!-- Onde as tarefas aparecem -->
+        </div>
 
-    <script src="script.js"></script>
-    <!-- 30: Importa o mesmo script.js; nele há lógica para a página de tarefas -->
+        <footer>
+            Projeto acadêmico - Rennê
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script> <!-- Liga o JS -->
+
 </body>
 </html>
