@@ -1,90 +1,103 @@
 body { /* Configurações gerais */
-    background: #0f141a;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: #0f141a; /* Fundo escuro */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove espaçamentos */
+    color: white; /* Texto branco */
+    display: flex; /* Layout flex */
+    flex-direction: column; /* Elementos em coluna */
+    align-items: center; /* Centraliza */
 }
 
-.titulo {
-    margin-top: 30px;
-    font-size: 32px;
-    color: #77a7ff;
+.titulo { /* Estilo do título principal */
+    margin-top: 30px; /* Espaço no topo */
+    font-size: 32px; /* Tamanho do texto */
+    color: #77a7ff; /* Azul claro */
 }
 
 .card {
-    width: 600px;
-    background: #12181f;
-    padding: 30px;
-    border-radius: 12px;
-    margin-top: 30px;
-    box-shadow: 0 0 10px #0005;
+    width: 90%; /* 📱 ALTERAÇÃO: agora ocupa 90% da tela no celular */
+    max-width: 600px; /* 📌 Mantém o tamanho original no PC */
+    background: #12181f; /* Fundo interno */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 12px; /* Bordas arredondadas */
+    margin-top: 30px; /* Espaço superior */
+    box-shadow: 0 0 10px #0005; /* Sombra suave */
 }
 
-label {
-    display: block;
-    margin-top: 18px;
-    margin-bottom: 6px;
-    font-size: 15px;
+label { /* Estilo dos rótulos */
+    display: block; /* Ocupa a linha inteira */
+    margin-top: 18px; /* Espaço acima */
+    margin-bottom: 6px; /* Espaço abaixo */
+    font-size: 15px; /* Tamanho do texto */
 }
 
 input,
-select {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    background: #0d1117;
-    color: white;
-    font-size: 15px;
+select { /* Campos de texto e seleção */
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 12px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    border: none; /* Remove borda padrão */
+    background: #0d1117; /* Fundo escuro do campo */
+    color: white; /* Texto branco */
+    font-size: 15px; /* Tamanho da fonte */
 }
 
 input:focus,
-select:focus {
-    outline: 2px solid #2f6bff;
+select:focus { /* Quando o campo está selecionado */
+    outline: 2px solid #2f6bff; /* Borda azul */
 }
 
-button {
-    width: 100%;
-    margin-top: 20px;
-    padding: 15px;
-    background: #0d51c1;
-    border: none;
-    color: white;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
+button { /* Botões */
+    width: 100%; /* Largura total */
+    margin-top: 20px; /* Espaço acima */
+    padding: 15px; /* Espaçamento interno */
+    background: #0d51c1; /* Fundo azul */
+    border: none; /* Sem borda */
+    color: white; /* Texto branco */
+    font-size: 18px; /* Tamanho do texto */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor de clique */
 }
 
-button:hover {
-    background: #0a3c8f;
+button:hover { /* Quando o mouse passa por cima */
+    background: #0a3c8f; /* Azul mais escuro */
 }
 
-.tarefa {
-    background: #1b222c;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 12px;
-    border-left: 4px solid #2f6bff;
+.tarefa { /* Estilo das tarefas exibidas */
+    background: #1b222c; /* Fundo escuro */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-top: 12px; /* Distância entre tarefas */
+    border-left: 4px solid #2f6bff; /* Borda azul lateral */
 }
 
-footer {
-    margin-top: 50px;
-    opacity: 0.4;
-    font-size: 14px;
+footer { /* Rodapé */
+    margin-top: 50px; /* Espaço acima */
+    opacity: 0.4; /* Transparência */
+    font-size: 14px; /* Tamanho do texto */
 }
 
-/* Torna o ícone do calendário branco (todos navegadores) */
+/* Torna o ícone do calendário branco */
 input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1) brightness(2);
+    filter: invert(1) brightness(2); /* Ícone branco */
     opacity: 1;
 }
 
-
 /* Esconde o sistema até o login */
 #sistema {
-    display: none;
+    display: none; /* Oculto inicialmente */
+}
+
+/* ====================== 📱 RESPONSIVIDADE PARA CELULAR ====================== */
+@media screen and (max-width: 480px) { /* 📌 ATIVA somente em telas pequenas */
+    
+    .titulo { /* Ajusta tamanho do título no celular */
+        font-size: 26px; /* Menor para encaixar melhor */
+    }
+
+    button { /* Botão menor para caber melhor */
+        font-size: 16px;
+        padding: 12px;
+    }
 }
